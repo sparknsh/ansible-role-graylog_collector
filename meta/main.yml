@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: graylog-collector
+  role_name: graylog_collector
   description: Manage Graylog Collector settings on each cleint.
   author: sparknsh
   company: Rebel Media, Inc.
@@ -22,5 +22,6 @@ galaxy_info:
     - cloud
     - graylog
     - collector
+    - sidecar
 
 dependencies: []

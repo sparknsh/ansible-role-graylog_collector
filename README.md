@@ -1,8 +1,10 @@
 # Ansible Role: Graylog Collector
 
-#### Version: 1.0.0
+#### Version: 1.0.1
 
 [![pipeline status](https://gitlab.com/sparknsh/ansible-role-graylog-collector/badges/master/pipeline.svg)](https://gitlab.com/sparknsh/ansible-role-graylog-collector/commits/master)
+[![Ansible Role](https://img.shields.io/ansible/role/30023.svg)](https://galaxy.ansible.com/sparknsh/graylog_collector)
+[![Ansible Role](https://img.shields.io/ansible/role/d/30023.svg)](https://galaxy.ansible.com/sparknsh/graylog_collector)
 
 Development of this project is managed in a private repository then pushed out to [GitLab](https://gitlab.com/sparknsh/ansible-role-graylog-collector) and [GitHub](https://github.com/sparknsh/ansible-role-graylog-collector) when we have a new version for you. If you have any issues please contact [sparknsh](https://www.sparknsh.com/contact?type=issue&name=ansible-role-graylog-collector)
 
@@ -51,7 +53,7 @@ graylog_collector_tags:
   vars_files:
     - vars/main.yml
   roles:
-     - { role: sparknsh.graylog-collector }
+     - { role: sparknsh.graylog_collector }
 ```
 
 ## License
