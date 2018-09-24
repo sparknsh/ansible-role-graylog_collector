@@ -1,0 +1,20 @@
+---
+
+- name: Debain Fmaily
+  include_tasks: Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: RedHat Fmaily
+  include_tasks: RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- name: Configure Graylog Collector Sidecar
+  template:
+    src: collector_sidecar.yml.j2
+    dest: "{{ graylog_collector_config_file }}"
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart Graylog Collector
+
+

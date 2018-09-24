@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  become: true
+  gather_timeout: 60
+
+  vars:
+    validate_certs: False
+
+  roles:
+    - role: role_under_test

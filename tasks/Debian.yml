@@ -1,0 +1,11 @@
+---
+
+- name: Install Graylog Collector Sidecar
+  apt:
+    deb: "{{ graylog_collector_github_repo }}/{{ graylog_collector_version }}/collector-sidecar_{{ graylog_collector_version }}-1_amd64.deb"
+    state: present
+  register: installed_latest
+
+- name: Activate Graylog Collector Sidecar
+  command: "graylog-collector-sidecar -service install"
+  when: installed_latest.changed

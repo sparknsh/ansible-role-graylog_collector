@@ -1,0 +1,7 @@
+---
+
+graylog_collector_version: 0.1.6
+graylog_collector_server_url: http://127.0.0.1:9000/api/
+graylog_collector_node_id:
+graylog_collector_tags:
+  - linux

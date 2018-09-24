@@ -1,0 +1,27 @@
+# {{ ansible_managed }}
+
+server_url: {{ graylog_collector_server_url }}
+update_interval: {{ graylog_collector_update_interval }}
+tls_skip_verify: {{ graylog_collector_tls_skip_verify | lower }}
+send_status: {{ graylog_collector_send_status | lower }}
+list_log_files: {{ graylog_collector_list_log_files | default('', True) }}
+{% if graylog_collector_node_id is defined and graylog_collector_node_id %}
+node_id: {{ graylog_collector_node_id }}
+{% endif %}
+collector_id: {{ graylog_collector_collector_id }}
+cache_path: {{ graylog_collector_cache_path}}
+log_path: {{ graylog_collector_log_path  }}
+log_rotation_time: {{ graylog_collector_log_rotation_time }}
+log_max_age: {{ graylog_collector_log_max_age }}
+tags:
+{% for tag in graylog_collector_tags %}
+  - {{ tag }}
+{% endfor %}
+
+backends:
+{% for backend in graylog_collector_backends %}
+  - name: {{ backend.name }}
+    enabled: {{ backend.enabled }}
+    binary_path: {{ backend.binary_path }}
+    configuration_path: {{ backend.configuration_path }}
+{% endfor %}
