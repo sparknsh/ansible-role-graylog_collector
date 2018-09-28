@@ -1,6 +1,6 @@
 # Ansible Role: Graylog Collector
 
-#### Version: 1.0.1
+#### Version: 1.0.2
 
 [![pipeline status](https://gitlab.com/sparknsh/ansible-role-graylog-collector/badges/master/pipeline.svg)](https://gitlab.com/sparknsh/ansible-role-graylog-collector/commits/master)
 [![Ansible Role](https://img.shields.io/ansible/role/30023.svg)](https://galaxy.ansible.com/sparknsh/graylog_collector)
