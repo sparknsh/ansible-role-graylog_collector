@@ -5,8 +5,8 @@ graylog_collector_config_file: /etc/graylog/collector-sidecar/collector_sidecar.
 graylog_collector_service: collector-sidecar
 
 graylog_collector_update_interval: 10
-graylog_collector_tls_skip_verify: False
-graylog_collector_send_status: True
+graylog_collector_tls_skip_verify: false
+graylog_collector_send_status: true
 graylog_collector_list_log_files:
 graylog_collector_collector_id: file:/etc/graylog/collector-sidecar/collector-id
 graylog_collector_cache_path: /var/cache/graylog/collector-sidecar
