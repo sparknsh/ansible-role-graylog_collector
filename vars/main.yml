@@ -1,6 +1,7 @@
 ---
 
 graylog_collector_github_repo: https://github.com/Graylog2/collector-sidecar/releases/download
+graylog_collector_source_link: "{{ graylog_collector_github_repo }}/{{ graylog_collector_version }}"
 graylog_collector_config_file: /etc/graylog/collector-sidecar/collector_sidecar.yml
 graylog_collector_service: collector-sidecar
 

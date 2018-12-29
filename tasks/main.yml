@@ -1,14 +1,31 @@
 ---
 
-- name: Debain Fmaily
-  include_tasks: Debian.yml
-  when: ansible_os_family == 'Debian'
+- name: "Check if Graylog Collector Sidecar is Installed"
+  stat:
+    path: "{{ graylog_collector_config_file }}"
+  register: result
 
-- name: RedHat Fmaily
-  include_tasks: RedHat.yml
-  when: ansible_os_family == 'RedHat'
+- name: "Install Graylog Collector"
+  block:
 
-- name: Configure Graylog Collector Sidecar
+    - name: "Install Graylog Collector Sidecar APT"
+      apt:
+        deb: "{{ graylog_collector_source_link }}/collector-sidecar_{{ graylog_collector_version }}-1_amd64.deb"
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: "Install Graylog Collector Sidecar YUM"
+      yum:
+        name: "{{ graylog_collector_source_link }}/collector-sidecar-{{ graylog_collector_version }}-1.x86_64.rpm"
+        state: present
+      when: ansible_os_family == 'RedHat'
+
+    - name: "Activate Graylog Collector Sidecar"
+      command: "graylog-collector-sidecar -service install"
+
+  when: not result.stat.exists
+
+- name: "Configure Graylog Collector Sidecar"
   template:
     src: collector_sidecar.yml.j2
     dest: "{{ graylog_collector_config_file }}"

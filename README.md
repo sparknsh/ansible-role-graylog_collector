@@ -1,6 +1,6 @@
 # Ansible Role: Graylog Collector
 
-#### Version: 1.1.0
+#### Version: 1.1.1
 
 [![](https://img.shields.io/badge/role-sparknsh.graylog_collector-blue.svg)](https://galaxy.ansible.com/sparknsh/graylog_collector)
 
